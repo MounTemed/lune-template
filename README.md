@@ -22,7 +22,7 @@
     bun install
     ```
 
-3. **Launch this application**
+3. **Launch this application**:
   ```bash
   bun run dev
   ```
