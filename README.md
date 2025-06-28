@@ -23,6 +23,6 @@
     ```
 
 3. **Launch this application**:
-  ```bash
-  bun run dev
-  ```
+    ```bash
+    bun run dev
+    ```
