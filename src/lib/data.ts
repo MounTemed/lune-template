@@ -8,11 +8,11 @@ export const personalInfo = {
 
 export const workExperience = [
   {
-    company: "Lune / open-source",
+    company: "LuneTeam open-source",
     location: "Remote",
     position: "DevOps-engineer",
-    period: "December 2024 - Present",
-    achievements: ["Launched my first project into production"],
+    period: "March 2025 - Present",
+    achievements: ["Launched a couple of projects on Github"],
   },
 ];
 
@@ -27,32 +27,40 @@ export const education = [
 ];
 export const skills = {
   programmingLanguages: ["Golang"],
-  databaseAndStorage: ["LiteSQL"],
-  cloudAndDevOps: [
-    "TimeWeb cloud",
-    "Ansible",
-    "Terraform",
-    "Podman",
-    "Podman-compose",
-    "NixOS",
-    "Nginx",
-  ],
-  toolsAndServices: ["todo"],
+  DevOps: ["Ansible", "Terraform", "Podman", "Podman-compose"],
+  CloudandLinux: ["TimeWeb cloud", "NixOS", "Archlinux", "Almalinux", "Debian"],
+  databaseAndStorage: ["SQLite"],
+  Monitoring: ["Grafana", "Prometheus", "Node-exporter"],
+  Backend: ["Nginx"],
 };
 
 export const projects = [
   {
     title: "Lune.su",
-    github: "https://github.com/LinuxFamily/Lune.su",
+    github: "https://github.com/LuneTeam/Lune.su",
     description: [
       "My own web server which is made with the latest devops technologies",
     ],
   },
   {
     title: "LuneDots",
-    github: "https://github.com/LinuxFamily/LuneDots",
+    github: "https://github.com/LuneTeam/LuneDots",
     description: [
       "My personal NixOS configuration, I want to show how beautiful and functional Linux can be",
+    ],
+  },
+  {
+    title: "Monitoring",
+    github: "https://github.com/MounTemed/Monitoring",
+    description: [
+      "A simple template of how to easily run grafana and prometheus, node-exporter",
+    ],
+  },
+  {
+    title: "Delivery",
+    github: "https://github.com/MounTemed/Delivery",
+    description: [
+      "Simple but powerful enough CI/CD with github actions and ansible",
     ],
   },
 ];

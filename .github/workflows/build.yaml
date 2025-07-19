@@ -1,0 +1,64 @@
+name: Assembly and push in lune.su
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout MounTemed/lune-template
+        uses: actions/checkout@v4.2.2
+        with:
+          path: lune-template
+
+      - name: Set up Node.js and Bun
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install -g bun
+
+      - name: Update dependencies, then run build
+        working-directory: ./lune-template
+        run: |
+          bun install
+          bun install react typescript
+          bun run build
+
+      - name: Checkout LuneTeam/lune.su
+        uses: actions/checkout@v4.2.2
+        with:
+          repository: LuneTeam/lune.su
+          path: lune.su
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Copy built files
+        run: |
+          SOURCE_DIR="lune-template/dist"
+          TARGET_DIR="lune.su/images/app"
+
+          mkdir -p $TARGET_DIR
+          cp -r $SOURCE_DIR/* $TARGET_DIR
+
+      - name: Create pull-request
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          BRANCH_NAME: "update-luneapp"
+        run: |
+          cd lune.su
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout -b $BRANCH_NAME
+
+          git add .
+          git commit -m "frontend: update from lune-template"
+          git push origin $BRANCH_NAME
+
+          gh pr create \
+            --base main \
+            --head $BRANCH_NAME \
+            --title "Auto update from lune-template" \
+            --body "This PR was created automatically to sync changes from the MounTemed/lune-template repository"
