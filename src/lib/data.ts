@@ -27,7 +27,13 @@ export const education = [
 ];
 export const skills = {
   programmingLanguages: ["Golang"],
-  DevOps: ["Ansible", "Terraform", "Podman", "Podman-compose"],
+  DevOps: [
+    "Ansible",
+    "Terraform",
+    "Podman",
+    "Podman-compose",
+    "Github actions",
+  ],
   CloudandLinux: ["TimeWeb cloud", "NixOS", "Archlinux", "Almalinux", "Debian"],
   databaseAndStorage: ["SQLite"],
   Monitoring: ["Grafana", "Prometheus", "Node-exporter"],
