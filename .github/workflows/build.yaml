@@ -45,7 +45,7 @@ jobs:
       - name: Create pull-request
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
-          BRANCH_NAME: "update-luneapp"
+          BRANCH_NAME: "update-luneapp-${{ github.sha }}"
         run: |
           cd lune.su
           git config --global user.name "github-actions[bot]"
