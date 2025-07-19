@@ -53,7 +53,7 @@ jobs:
 
           git checkout -b $BRANCH_NAME
 
-          git add .
+          git add --force ./images/app/
           git commit -m "frontend: update from lune-template"
           git push origin $BRANCH_NAME
 
