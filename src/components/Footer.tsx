@@ -15,7 +15,7 @@ export default function Footer() {
             className="text-sm text-muted-foreground text-center md:text-left"
             whileHover={{ scale: 1.01 }}
           >
-            &copy; {new Date().getFullYear()} LuneCompany. All rights reserved.
+            &copy; {new Date().getFullYear()} LuneCompany. All rights reserved
             ✨
           </motion.p>
           <motion.p
