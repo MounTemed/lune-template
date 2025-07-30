@@ -69,6 +69,11 @@ export const projects = [
       "Simple but powerful enough CI/CD with github actions and ansible",
     ],
   },
+  {
+    title: "Kuster",
+    github: "https://github.com/MounTemed/kuster",
+    description: ["Full-fledged kubernetes cluster with ArgoCD"],
+  },
 ];
 
 export const awards = [

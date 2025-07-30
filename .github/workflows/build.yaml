@@ -37,7 +37,7 @@ jobs:
       - name: Copy built files
         run: |
           SOURCE_DIR="lune-template/dist"
-          TARGET_DIR="lune.su/images/app"
+          TARGET_DIR="lune.su/images/app/frontend"
 
           mkdir -p $TARGET_DIR
           cp -r $SOURCE_DIR/* $TARGET_DIR
@@ -53,7 +53,7 @@ jobs:
 
           git checkout -b $BRANCH_NAME
 
-          git add --force ./images/app/
+          git add --force ./images/app/frontend
           git commit -m "frontend: update from lune-template"
           git push origin $BRANCH_NAME
 
